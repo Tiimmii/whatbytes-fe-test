@@ -5,7 +5,7 @@ import profile_pic from './images/profile_picture.jpg'
 const page = () => {
   return (
     <main className='background min-h-screen flex flex-col text-sm sm:text-base'>
-      <nav>
+      <nav className='border-b-2'>
         <div>
           <img src={icon} alt='whatbytes icon'/>
           <h1>WhatBytes</h1>
