@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customBorder: '#EFF3F4',
+        customBorder: '#EFF3F4', /* custom border used throughout the page */
       },
     },
   },
