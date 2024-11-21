@@ -22,6 +22,7 @@ const CustomDot = ({ cx, cy, payload, percentile }) => {
     return <circle cx={cx} cy={cy} r={2} stroke="blue" fill="white" />;
 };
 
+// Comparison Graph component
 const ComparisonGraph = ({ percentile, data }) => {
   return (
     <div className='flex flex-col gap-5 border-[1px] border-customBorder rounded-md items-center w-full justify-center p-7'>

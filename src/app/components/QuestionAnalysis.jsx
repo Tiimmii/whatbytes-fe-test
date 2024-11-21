@@ -3,7 +3,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Image from 'next/image';
 
-
+//Question analysis component
 const QuestionAnalysis = ({correctAnswers}) => {
     const total = 15;
     const percentage = (correctAnswers / 15) * 100;

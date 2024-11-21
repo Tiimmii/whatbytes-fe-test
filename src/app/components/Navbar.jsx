@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 
+//Navbar Component
 const Navbar = () => {
   return (
     <nav className='navbar border-b-[1px] border-customBorder flex justify-between p-4 min-w-full'>

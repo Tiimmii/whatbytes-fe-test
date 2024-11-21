@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+// Modal for updating scores, percentile & number of correct answers
 const UpdateScoresModal = ({
   isOpen,
   onClose,

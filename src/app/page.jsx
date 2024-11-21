@@ -4,25 +4,26 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Testbox from './components/Testbox';
 import Image from 'next/image';
-import Syllabus from './components/Syllabus';
 import SyllabusAnalysis from './components/Syllabus';
 import QuestionAnalysis from './components/QuestionAnalysis';
 import UpdateScoresModal from './components/Modal';
 import ComparisonGraph from './components/ComparisonGraph';
 
+// Whatbytes Dashboard page with all components
 const page = () => {
 
+  // use state management for variables
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rank, setRank] = useState(1);
   const [percentile, setPercentile] = useState(30);
   const [correctAnswers, setCorrectAnswers] = useState(5);
 
-  //sample data for comparison
+  //sample data for graph comparison
   const sampleData = [
     { percentile: 0, numberOfStudents: 5 },
     { percentile: 10, numberOfStudents: 10 },
     { percentile: 20, numberOfStudents: 20 },
-    { percentile: 30, numberOfStudents: 40 }, // Your percentile
+    { percentile: 30, numberOfStudents: 40 },
     { percentile: 40, numberOfStudents: 35 },
     { percentile: 50, numberOfStudents: 50 },
     { percentile: 60, numberOfStudents: 25 },
@@ -32,6 +33,7 @@ const page = () => {
     { percentile: 100, numberOfStudents: 1 },
   ];
 
+  //modal handlers
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -42,13 +44,17 @@ const page = () => {
 
   return (
     <div className='main background min-h-screen flex flex-col text-sm sm:text-base'>
+      {/* Navbar component */}
       <Navbar/>
+      {/* Sidebar component*/}
       <Sidebar/>
       
       <main className='xs:ml-[4rem] sm:ml-[5rem] md:ml-[12rem] lg:ml-[18rem] mt-[7rem]'>
         <p className='text-customText font-medium mb-5'>Skill Test</p>
         <div className='flex flex-wrap flex-row gap-4'>
+          {/* First Column */}
           <div className='flex flex-col gap-5 md:w-full lg:w-[65%]'>
+            {/* custom box for components */}
             <Testbox>
               <Image 
                 src="/images/HTML_5.png" 
@@ -65,6 +71,7 @@ const page = () => {
                   Update
               </button>
             </Testbox>
+            {/* custom box for components */}
             <Testbox>
               <p className='font-bold min-w-full'>Quick Statistics</p>
               <div className='flex flex-wrap min-w-full flex justify-start gap-2 items-center'>
@@ -111,19 +118,24 @@ const page = () => {
                 </div>
               </div>
             </Testbox>
+            {/* Comparison Graph */}
             <ComparisonGraph
             percentile={percentile}
             data={sampleData}
             />
           </div>
+          {/* Second Column */}
           <div className='flex flex-col gap-5 md:w-full lg:w-[33%]'>
+            {/* Syllabus Analysis component */}
             <SyllabusAnalysis/>
+            {/* Question Analysis component */}
             <QuestionAnalysis
             correctAnswers = {correctAnswers}
             />
           </div>
         </div>
       </main>
+      {/* Modal to update scores */}
       <UpdateScoresModal 
       isOpen={isModalOpen} 
       onClose={handleCloseModal} 

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProgressBar from './ProgressBar'
 
+//syllabus anlysis component
 const SyllabusAnalysis = () => {
   return (
     <div className='flex flex-col gap-5 border-[1px] border-customBorder rounded-md items-center w-full justify-center p-7 '>
