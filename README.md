@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to whatbytes-fe-test 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://twitter.com/Timmi\_tech" target="_blank">
+  <a href="https://twitter.com/Timmi_tech" target="_blank">
     <img alt="Twitter: Timmi\_tech" src="https://img.shields.io/twitter/follow/Timmi\_tech.svg?style=social" />
   </a>
 </p>
