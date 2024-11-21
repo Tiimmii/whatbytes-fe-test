@@ -26,3 +26,33 @@
 .sidebar{
   margin-top: 8rem;
 }
+.update{
+  background: #132277;
+}
+.quick-stats{
+  color: #A2A5AA;
+}
+.blue{
+  background: #3277F3;
+}
+.blue1{
+  background: #EAF2FE;
+}
+.orange{
+  background: #FF8038;
+}
+.orange1{
+  background: #FEF1EB;
+}
+.red{
+  background: #FA4F4F;
+}
+.red1{
+  background: #FFEBEC;
+}
+.green{
+  background: #28C064;
+}
+.green1{
+  background: #E6F9EF;
+}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className='navbar border-b-2 border-customBorder flex justify-between p-4'>
+    <nav className='navbar border-b-[1px] border-customBorder flex justify-between p-4 min-w-full'>
         <div className='flex items-center justify-center gap-2'>
           <Image 
           src="/images/whatbytes_icon.png" 
