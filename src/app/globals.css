@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+}
+
 .main{
   position: relative;
 }
@@ -22,12 +26,18 @@
 .sidebar-container{
   position: absolute;
   left: 0;
+  z-index: 99;
+  background: white;
 }
 .sidebar{
   margin-top: 8rem;
 }
 .update{
   background: #132277;
+}
+.cancel{
+  color: #132277;
+  border: 1px solid #132277;
 }
 .quick-stats{
   color: #A2A5AA;
@@ -55,4 +65,8 @@
 }
 .green1{
   background: #E6F9EF;
+}
+.update-scores{
+  position: fixed;
+  z-index: 9999;
 }
