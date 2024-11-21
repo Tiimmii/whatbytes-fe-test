@@ -14,7 +14,7 @@ const Sidebar = () => {
         </div>
         <div className='flex items-center gap-5 hover:bg-customHover hover:text-blue-600 hover:rounded-tr-[4rem] hover:rounded-br-[4rem] pl-6 pt-6 pb-6'>
             <i className="fa-regular fa-file"></i>
-            <p >Intenship</p>
+            <p >Internship</p>
         </div>
       </div>
     </div>

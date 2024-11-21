@@ -16,7 +16,7 @@ const Navbar = () => {
         </div>
         <div className='flex items-center justify-center gap-2 border-2 border-customBorder p-1 rounded-md cursor-pointer'>
           <Image 
-          src="/images/profile_picture.jpg" 
+          src="/images/profile_pic.jpg" 
           alt='profile picture' 
           width={30} 
           height={5}
