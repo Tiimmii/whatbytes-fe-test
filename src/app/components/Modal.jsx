@@ -62,7 +62,16 @@ const UpdateScoresModal = ({
               type="number"
               className="border-[1px] border-blue-600 rounded-md pt-2 pb-2 pl-3 font-bold appearance-none"
               value={tempRank} // Used the local temporary state here
-              onChange={(e) => setTempRank(e.target.value)} // Updated the local temporary state
+              onChange={(e) => {
+                const value = parseInt(e.target.value);
+
+                // Ensure value does not exceed 9999999
+                if (value <= 9999999 || isNaN(value)) {
+                setTempRank(value); // Update state only if valid
+                }
+            }}
+              placeholder='Rank'
+              required
             />
           </div>
           <div className="flex justify-between gap-7">
@@ -74,7 +83,16 @@ const UpdateScoresModal = ({
               type="number"
               className="border-[1px] border-blue-600 rounded-md pt-2 pb-2 pl-3 font-bold"
               value={tempPercentile} // Used the local temporary state here
-              onChange={(e) => setTempPercentile(e.target.value)} // Updated the local temporary state
+              onChange={(e) => {
+                const value = parseInt(e.target.value);
+
+                // Ensure value does not exceed 100
+                if (value <= 100 || isNaN(value)) {
+                setTempPercentile(value); // Update state only if valid
+                }
+            }}
+              placeholder='Percentile'
+              required
             />
           </div>
           <div className="flex justify-between gap-7">
@@ -87,9 +105,15 @@ const UpdateScoresModal = ({
               className="border-[1px] border-blue-600 rounded-md pt-2 pb-2 pl-3 font-bold"
               value={tempCorrectAnswers} // Used the local temporary state here
               onChange={(e) => {
-                const value = Math.min(e.target.value, 15); // ensured value doesn't exceed 15
-                setTempCorrectAnswers(value)} // Updated the local temporary state
-            } 
+                const value = parseInt(e.target.value);
+
+                // Ensure value does not exceed 15
+                if (value <= 15 || isNaN(value)) {
+                setTempCorrectAnswers(value); // Update state only if valid
+                }
+            }} 
+              placeholder='Current Score'
+              required  
             />
           </div>
           <div className="flex w-full justify-end gap-3">
