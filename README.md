@@ -24,11 +24,12 @@ npm run dev
 ## Navigating Around
 <p>
    Enjoy navigating around the Page
-  <img src='images/dashboard.png'/>
+  <img src='public/images/dashboard.png' alt='dashboard image'/>
 </p>
 
 
 ## PS
+<p>Page done using Next.js + TailwindCSS</p>
 <p>Graph was genereted using react recharts UI library</p>
 <p>Circular progress bar was genereted using react-circular-progressbar UI library</p>
 
