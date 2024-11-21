@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.main{
+  position: relative;
+}
 .background{
+  background: #FEFEFE;
+}
+.navbar{
+  z-index: 999;
   background: #FEFEFE;
 }
 .whatbytes-image{
@@ -11,4 +18,11 @@
 .profile-image{
   border-radius: 100%;
   height: 27px;
+}
+.sidebar-container{
+  position: absolute;
+  left: 0;
+}
+.sidebar{
+  margin-top: 8rem;
 }
