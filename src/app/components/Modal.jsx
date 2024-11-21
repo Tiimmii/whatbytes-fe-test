@@ -44,7 +44,7 @@ const UpdateScoresModal = ({
   return (
     <div className="update-scores flex justify-center items-center min-h-screen w-full bg-gradient-to-b from-black/80 to-black/80 my-0">
       <div>
-        <form className="flex flex-col p-5 bg-white rounded-lg gap-6" onSubmit={handleUpdatedScores}>
+        <form className="flex flex-col p-5 bg-white rounded-lg xs:gap-2 lg:gap-6" onSubmit={handleUpdatedScores}>
           <div className="flex items-center justify-between mb-5">
             <p className="font-bold text-[20px]">Update Scores</p>
             <Image
@@ -54,68 +54,80 @@ const UpdateScoresModal = ({
               height={40}
             />
           </div>
-          <div className="flex justify-between gap-7">
+          <div className="flex justify-between xs:gap-4 lg:gap-7">
             <div className="flex gap-3 items-center">
-              <label className="update rounded-[100%] text-white w-7 my-auto text-center font-medium">1</label>
+              <label className="update rounded-[100%] text-white min-w-5 my-auto text-center font-medium">1</label>
               <p>Update your <span className="font-bold">Rank</span></p>
             </div>
-            <input
-              type="number"
-              className="border-[1px] border-blue-600 rounded-md pt-2 pb-2 pl-3 font-bold appearance-none"
-              value={tempRank} // Used the local temporary state here
-              onChange={(e) => {
-                const value = parseInt(e.target.value);
+            <div className='flex flex-col gap-0'>
+                <input
+                type="number"
+                className={`border-[1px] ${tempRank? 'border-blue-600':'border-red-600'} rounded-md pt-2 pb-2 pl-3 font-bold appearance-none outline-none`}
+                value={tempRank} // Used the local temporary state here
+                onChange={(e) => {
+                    const value = parseInt(e.target.value);
 
-                // Ensure value does not exceed 9999999
-                if (value <= 9999999 || isNaN(value)) {
-                setTempRank(value); // Update state only if valid
-                }
-            }}
-              placeholder='Rank'
-              required
-            />
+                    // Ensure value does not exceed 9999999
+                    if (value <= 9999999 || isNaN(value)) {
+                    setTempRank(value); // Update state only if valid
+                    }
+                }}
+                placeholder='Rank'
+                required
+                />
+                {/* Conditional label which only displays if input is empty */}
+                {tempRank?'': <label className='text-red-600 text-[12px]'>required | should be number</label>}
+            </div>
           </div>
           <div className="flex justify-between gap-7">
             <div className="flex gap-3 items-center">
-              <label className="update rounded-[100%] text-white w-7 my-auto text-center font-medium">2</label>
+              <label className="update rounded-[100%] text-white min-w-5 my-auto text-center font-medium">2</label>
               <p>Update your <span className="font-bold">Percentile</span></p>
             </div>
-            <input
-              type="number"
-              className="border-[1px] border-blue-600 rounded-md pt-2 pb-2 pl-3 font-bold"
-              value={tempPercentile} // Used the local temporary state here
-              onChange={(e) => {
-                const value = parseInt(e.target.value);
+            <div className='flex flex-col gap-0'>
+                <input
+                type="number"
+                className={`border-[1px] ${tempPercentile? 'border-blue-600':'border-red-600'} rounded-md pt-2 pb-2 pl-3 font-bold appearance-none outline-none`}
+                value={tempPercentile} // Used the local temporary state here
+                onChange={(e) => {
+                    const value = parseInt(e.target.value);
 
-                // Ensure value does not exceed 100
-                if (value <= 100 || isNaN(value)) {
-                setTempPercentile(value); // Update state only if valid
-                }
-            }}
-              placeholder='Percentile'
-              required
-            />
+                    // Ensure value does not exceed 100
+                    if (value <= 100 || isNaN(value)) {
+                    setTempPercentile(value); // Update state only if valid
+                    }
+                }}
+                placeholder='Percentile'
+                required
+                />
+                {/* Conditional label which only displays if input is empty */}
+                {tempPercentile?'':<label className='text-red-600 text-[12px]'>required | percentile 0-100</label>}
+            </div>
           </div>
           <div className="flex justify-between gap-7">
             <div className="flex gap-3 items-center">
-              <label className="update rounded-[100%] text-white w-7 my-auto text-center font-medium">3</label>
+              <label className="update rounded-[100%] text-white min-w-5 my-auto text-center font-medium">3</label>
               <p>Update your <span className="font-bold">Current Score (out of 15)</span></p>
             </div>
-            <input
-              type="number"
-              className="border-[1px] border-blue-600 rounded-md pt-2 pb-2 pl-3 font-bold"
-              value={tempCorrectAnswers} // Used the local temporary state here
-              onChange={(e) => {
-                const value = parseInt(e.target.value);
+            <div className='flex flex-col gap-0'>
+                <input
+                type="number"
+                className={`border-[1px] ${tempCorrectAnswers? 'border-blue-600':'border-red-600'} rounded-md pt-2 pb-2 pl-3 font-bold appearance-none outline-none`}
+                value={tempCorrectAnswers} // Used the local temporary state here
+                onChange={(e) => {
+                    const value = parseInt(e.target.value);
 
-                // Ensure value does not exceed 15
-                if (value <= 15 || isNaN(value)) {
-                setTempCorrectAnswers(value); // Update state only if valid
-                }
-            }} 
-              placeholder='Current Score'
-              required  
-            />
+                    // Ensure value does not exceed 15
+                    if (value <= 15 || isNaN(value)) {
+                    setTempCorrectAnswers(value); // Update state only if valid
+                    }
+                }} 
+                placeholder='Current Score'
+                required  
+                />
+                {/* Conditional label which only displays if input is empty */}
+                {tempCorrectAnswers?'': <label className='text-red-600 text-[12px]'>required | Current score (out of 15)</label>}
+            </div>
           </div>
           <div className="flex w-full justify-end gap-3">
             <button

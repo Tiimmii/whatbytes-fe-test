@@ -9,10 +9,6 @@
 .main{
   
 }
-input {
-  -webkit-appearance: none;       /* remove default apperance on input buttons */
-  appearance: none; 
-}
 .background{
   background: #FEFEFE;  /* background color */
 }
@@ -79,4 +75,8 @@ input {
 .update-scores{
   position: fixed;   /* Positioning the update scores modal */
   z-index: 9999;
+}
+.update-scores input {
+  -webkit-appearance: none;       /* remove default apperance on input buttons */
+  appearance: none; 
 }
