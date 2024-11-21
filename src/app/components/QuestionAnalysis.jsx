@@ -18,17 +18,18 @@ const QuestionAnalysis = ({correctAnswers}) => {
       </span> However it still needs some improvements
       </p>
       {/* Circular Progress Bar */}
-      <div style={{ width: 120, height: 120, marginBottom: '20px', position: 'relative' }}>
+      <div style={{ width: 120, height: 120, marginBottom: '20px', position: 'relative'}}>
         <CircularProgressbar
           value={percentage}
           text={''}
+          strokeWidth={16} //make stroke thicker
           styles={buildStyles({
             textSize: '16px',
             pathColor: '#3A7DF4', // Blue path
             textColor: '#3A7DF4', // Blue text
-            trailColor: '#d6d6d6', // Light gray trail
+            trailColor: '#EAF2FE', // Light blue trail
             strokeLinecap: 'butt', // straight stroke edges
-            strokeWidth: 20, //make stroke thicker
+            rotation: 0.59,
           })}
         />
         <Image 

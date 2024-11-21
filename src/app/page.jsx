@@ -16,7 +16,7 @@ const page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rank, setRank] = useState(1);
   const [percentile, setPercentile] = useState(30);
-  const [correctAnswers, setCorrectAnswers] = useState(5);
+  const [correctAnswers, setCorrectAnswers] = useState(10);
 
   //sample data for graph comparison
   const sampleData = [
