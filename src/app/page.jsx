@@ -49,7 +49,7 @@ const page = () => {
       {/* Sidebar component*/}
       <Sidebar/>
       
-      <main className='xs:ml-[4rem] sm:ml-[4rem] md:ml-[11rem] lg:ml-[17rem] mt-[7rem] pr-[2rem]'>
+      <main className='xs:ml-[4rem] sm:ml-[4rem] md:ml-[11rem] lg:ml-[17rem] mt-[7rem] pr-[1rem]'>
         <p className='text-customText font-medium mb-5'>Skill Test</p>
         <div className='flex flex-wrap flex-row gap-4'>
           {/* First Column */}
