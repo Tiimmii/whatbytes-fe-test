@@ -7,12 +7,17 @@
 }
 
 .main{
-  position: relative;
+  
+}
+input {
+  -webkit-appearance: none;
+  appearance: none;
 }
 .background{
   background: #FEFEFE;
 }
 .navbar{
+  position: fixed;
   z-index: 999;
   background: #FEFEFE;
 }
@@ -24,7 +29,7 @@
   height: 27px;
 }
 .sidebar-container{
-  position: absolute;
+  position: fixed;
   left: 0;
   z-index: 99;
   background: white;

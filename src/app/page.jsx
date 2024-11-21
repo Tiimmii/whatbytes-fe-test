@@ -8,10 +8,29 @@ import Syllabus from './components/Syllabus';
 import SyllabusAnalysis from './components/Syllabus';
 import QuestionAnalysis from './components/QuestionAnalysis';
 import UpdateScoresModal from './components/Modal';
+import ComparisonGraph from './components/ComparisonGraph';
 
 const page = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [rank, setRank] = useState(1);
+  const [percentile, setPercentile] = useState(30);
+  const [correctAnswers, setCorrectAnswers] = useState(5);
+
+  //sample data for comparison
+  const sampleData = [
+    { percentile: 0, numberOfStudents: 5 },
+    { percentile: 10, numberOfStudents: 10 },
+    { percentile: 20, numberOfStudents: 20 },
+    { percentile: 30, numberOfStudents: 40 }, // Your percentile
+    { percentile: 40, numberOfStudents: 35 },
+    { percentile: 50, numberOfStudents: 50 },
+    { percentile: 60, numberOfStudents: 25 },
+    { percentile: 70, numberOfStudents: 15 },
+    { percentile: 80, numberOfStudents: 5 },
+    { percentile: 90, numberOfStudents: 4 },
+    { percentile: 100, numberOfStudents: 1 },
+  ];
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -26,8 +45,8 @@ const page = () => {
       <Navbar/>
       <Sidebar/>
       
-      <main className='xs:ml-[4rem] sm:ml-[5rem] md:ml-[12rem] lg:ml-[18rem] mt-8'>
-        <p className='text-customText font-medium'>Skill Test</p>
+      <main className='xs:ml-[4rem] sm:ml-[5rem] md:ml-[12rem] lg:ml-[18rem] mt-[7rem]'>
+        <p className='text-customText font-medium mb-5'>Skill Test</p>
         <div className='flex flex-wrap flex-row gap-4'>
           <div className='flex flex-col gap-5 md:w-full lg:w-[65%]'>
             <Testbox>
@@ -58,7 +77,7 @@ const page = () => {
 
                   />
                   <div>
-                    <p className='font-bold text-[18px]'>1</p>
+                    <p className='font-bold text-[18px]'>{rank}</p>
                     <span className='quick-stats uppercase text-[16px]'>Your Rank</span>
                   </div>
                 </div>
@@ -72,7 +91,7 @@ const page = () => {
 
                   />
                   <div>
-                    <p className='font-bold text-[18px]'>30%</p>
+                    <p className='font-bold text-[18px]'>{percentile}%</p>
                     <span className='quick-stats uppercase text-[16px]'>Percentile</span>
                   </div>
                   <div className='w-[2px] h-[6rem] bg-customBorder hidden md:block'></div>
@@ -86,20 +105,34 @@ const page = () => {
 
                   />
                   <div>
-                    <p className='font-bold text-[18px]'>10 / 15</p>
+                    <p className='font-bold text-[18px]'>{correctAnswers} / 15</p>
                     <span className='quick-stats uppercase text-[16px]'>Correct Answers</span>
                   </div>
                 </div>
               </div>
             </Testbox>
+            <ComparisonGraph
+            percentile={percentile}
+            data={sampleData}
+            />
           </div>
           <div className='flex flex-col gap-5 md:w-full lg:w-[33%]'>
             <SyllabusAnalysis/>
-            <QuestionAnalysis/>
+            <QuestionAnalysis
+            correctAnswers = {correctAnswers}
+            />
           </div>
         </div>
       </main>
-      <UpdateScoresModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <UpdateScoresModal 
+      isOpen={isModalOpen} 
+      onClose={handleCloseModal} 
+      rank={rank} percentile={percentile} 
+      correctAnswers={correctAnswers} 
+      setRank={setRank} 
+      setPercentile={setPercentile} 
+      setCorrectAnswers={setCorrectAnswers}
+      />
     </div>
   )
 }
