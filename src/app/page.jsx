@@ -49,7 +49,7 @@ const page = () => {
       {/* Sidebar component*/}
       <Sidebar/>
       
-      <main className='xs:ml-[4rem] sm:ml-[5rem] md:ml-[12rem] lg:ml-[18rem] mt-[7rem]'>
+      <main className='xs:ml-[4rem] sm:ml-[4rem] md:ml-[11rem] lg:ml-[17rem] mt-[7rem] pr-[2rem]'>
         <p className='text-customText font-medium mb-5'>Skill Test</p>
         <div className='flex flex-wrap flex-row gap-4'>
           {/* First Column */}
@@ -67,7 +67,7 @@ const page = () => {
                   <p className='font-bold xs:text-[16px]'>Hyper Text Markup Language</p>
                   <span className='text-customText xs:text-[12px]'>Questions: 08 | Duration: 15mins | Submitted on 5 June 2021</span>
               </div>
-              <button className='update px-6 text-white rounded-lg font-medium border-2 border-gray-800 xs:text-[12px]' onClick={handleOpenModal}>
+              <button className='update px-6 py-2 text-white rounded-lg font-medium border-2 border-gray-800 xs:text-[12px]' onClick={handleOpenModal}>
                   Update
               </button>
             </Testbox>
